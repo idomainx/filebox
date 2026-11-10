@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Files</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Files</h1>
+  <span id="status"></span>
+</header>
+
+<label id="drop">
+  <input id="picker" type="file" multiple hidden>
+  Drop files here or tap to upload
+</label>
+
+<div id="bar">
+  <div class="row">
+    <button id="selAll" type="button">Select all</button>
+    <button id="selNone" type="button">Clear</button>
+    <span id="count">0 selected</span>
+    <button id="getLinks" type="button" class="primary">Get links</button>
+    <button id="delSel" type="button" class="danger">Delete</button>
+  </div>
+  <div class="row">
+    <span>Rename selected:</span>
+    <input id="prefix" type="text" placeholder="prefix (e.g. a)" maxlength="12" autocomplete="off">
+    <input id="start" type="number" value="1" min="0" max="99999">
+    <button id="renameBtn" type="button">Rename</button>
+  </div>
+</div>
+
+<div id="linksBox" hidden>
+  <textarea id="links" readonly rows="6"></textarea>
+  <div class="row">
+    <button id="copyAll" type="button" class="primary">Copy all</button>
+    <button id="closeLinks" type="button">Close</button>
+  </div>
+</div>
+
+<div id="grid"></div>
+<div id="empty" hidden>No files yet.</div>
+<div id="toast" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
